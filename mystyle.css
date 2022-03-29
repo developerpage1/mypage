@@ -1,0 +1,57 @@
+:root {
+  --color: white;
+}
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.item-1 {
+  grid-area: logo;
+  background-color: aqua;
+}
+.item-2 {
+  grid-area: navbar;
+  background-color: rgb(5, 228, 228);
+}
+.item-3 {
+  grid-area: header;
+  background-color: rgb(3, 172, 172);
+}
+.item-4 {
+  grid-area: myhtml;
+  background-color: rgb(61, 252, 252);
+}
+.item-5 {
+  grid-area: mycss;
+  background-color: rgb(52, 216, 216);
+}
+.item-6 {
+  grid-area: myjscript;
+  background-color: rgb(40, 190, 190);
+}
+.item-7 {
+  grid-area: pagination;
+  background-color: rgb(126, 247, 247);
+}
+.item-8 {
+  grid-area: main;
+  background-color: rgb(90, 173, 173);
+}
+.item-9 {
+  grid-area: foot;
+  background-color: rgb(65, 122, 122);
+}
+.gridbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 80px 80px 300px 80px 500px 60px;
+  grid-template-areas:
+    "logo logo navbar navbar navbar navbar"
+    "header header header header header header"
+    "myhtml myhtml mycss mycss myjscript myjscript"
+    "pagination pagination pagination pagination pagination pagination"
+    "main main main main main main"
+    "foot foot foot foot foot foot";
+}
