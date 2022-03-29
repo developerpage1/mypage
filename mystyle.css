@@ -55,3 +55,17 @@
     "main main main main main main"
     "foot foot foot foot foot foot";
 }
+@media (max-width: 760px) {
+  .gridbox {
+    grid-template-areas:
+      "logo logo logo navbar navbar navbar"
+      "header header header header header header"
+      "myhtml myhtml myhtml myhtml myhtml myhtml"
+      "mycss mycss mycss mycss mycss mycss"
+      "myjscript myjscript myjscript myjscript myjscript myjscript"
+      "pagination pagination pagination pagination pagination pagination"
+      "main main main main main main"
+      "foot foot foot foot foot foot";
+    grid-template-rows: 80px 80px 300px 300px 300px 80px 500px 60px;
+  }
+}
