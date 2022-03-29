@@ -8,17 +8,121 @@
     <link rel="stylesheet" href="mystyle.css" />
     <script src="myscript.js" defer></script>
   </head>
-  <body>
+  <body onresize="resizeFunction()">
     <div class="gridbox">
-      <div class="item-1">logo</div>
-      <div class="item-2">navbar</div>
-      <div class="item-3">My web page</div>
-      <div class="item-4">HTML</div>
-      <div class="item-5">CSS</div>
-      <div class="item-6">Javascript</div>
-      <div class="item-7">pagination</div>
-      <div class="item-8">content</div>
-      <div class="item-9">footer</div>
+      <div id="logo" class="item-1">logo</div>
+      <div class="item-2">
+        <div class="navbar-menu">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+          <a href="#">Link 4</a>
+        </div>
+        <div id="burger" onclick="showNavbar()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="item-3">
+        <h1>My web page</h1>
+      </div>
+      <div class="item-4">
+        <div class="infohtml">
+          <div>
+            <h3>HTML</h3>
+          </div>
+          <div class="infohtml-img">
+            <img
+              src="img/icone-html.png"
+              alt="HTML icon"
+              width="100px"
+              height="100px"
+            />
+            <div class="infohtml-list">
+              <ul>
+                <li>HTML stands for Hyper Text Markup Language</li>
+                <li>
+                  HTML is the standard markup language for creating Web pages
+                </li>
+                <li>HTML describes the structure of a Web page</li>
+                <li>HTML consists of a series of elements</li>
+                <li>
+                  HTML elements tell the browser how to display the content
+                </li>
+                <li>
+                  HTML elements label pieces of content such as "this is a
+                  heading", "this is a paragraph", "this is a link", etc.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-5">
+        <div class="infocss">
+          <div>
+            <h3>CSS</h3>
+          </div>
+          <div class="infocss-img">
+            <img
+              src="img/icone-css.png"
+              width="100px"
+              height="100px"
+              alt="CSS icone"
+            />
+            <div>
+              <ul class="infocss-list">
+                <li>CSS stands for Cascading Style Sheets</li>
+                <li>
+                  CSS describes how HTML elements are to be displayed on screen,
+                  paper, or in other media
+                </li>
+                <li>
+                  CSS saves a lot of work. It can control the layout of multiple
+                  web pages all at once
+                </li>
+                <li>External stylesheets are stored in CSS files</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-6">
+        <div class="infojscript">
+          <div>
+            <h3>JavaScript</h3>
+          </div>
+          <div class="infojscript-img">
+            <img src="img/icone-javascript.png" alt="JavaScript icone" />
+            <div>
+              <ul class="infojscript-list">
+                <li>
+                  JavaScript is the world's most popular programming language.
+                </li>
+                <li>JavaScript is the programming language of the Web.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item-7" id="page">
+        <a href="#page" onclick="showNext(-1)">&lt;</a>
+        <a href="#page" class="page-num active" onclick="showMain(1)">1</a>
+        <a href="#page" class="page-num" onclick="showMain(2)">2</a>
+        <a href="#page" class="page-num" onclick="showMain(3)">3</a>
+        <a href="#page" class="page-num" onclick="showMain(4)">4</a>
+        <a href="#page" onclick="showNext(1)">&gt;</a>
+      </div>
+      <div class="item-8">
+        <div data-img="1" class="main active"></div>
+        <div data-img="2" class="main"></div>
+        <div data-img="3" class="main"></div>
+        <div data-img="4" class="main"></div>
+      </div>
+      <div class="item-9">
+        <p>footer</p>
+      </div>
     </div>
   </body>
 </html>
