@@ -1,9 +1,9 @@
 :root {
   --color-white: white;
   --color-black: black;
-  --bg-color: rgb(5, 228, 228);
-  --bg-color-darker: rgb(2, 179, 179);
-  --bg-color-active: rgba(5, 228, 228, 0.7);
+  --bg-color: rgb(168, 232, 243);
+  --bg-color-darker: rgb(131, 228, 245);
+  --bg-color-active: rgba(233, 250, 250, 0.8);
 }
 * {
   box-sizing: border-box;
@@ -36,19 +36,11 @@
   text-align: center;
   padding: 20px;
 }
-.item-4 {
-  grid-area: myhtml;
-  background-color: var(--bg-color);
+.item-456 {
+  grid-area: cards;
   overflow: auto;
 }
-.item-5 {
-  grid-area: mycss;
-  background-color: var(--bg-color);
-}
-.item-6 {
-  grid-area: myjscript;
-  background-color: var(--bg-color);
-}
+
 .item-7 {
   grid-area: pagination;
   background-color: var(--bg-color-darker);
@@ -68,11 +60,11 @@
 .gridbox {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 80px 80px 600px 80px 500px 60px;
+  grid-template-rows: 80px 80px auto 80px 500px 60px;
   grid-template-areas:
     "logo logo navbar navbar navbar navbar"
     "header header header header header header"
-    "myhtml myhtml mycss mycss myjscript myjscript"
+    "cards cards cards cards cards cards"
     "pagination pagination pagination pagination pagination pagination"
     "main main main main main main"
     "foot foot foot foot foot foot";
@@ -111,27 +103,34 @@
 .navbar-menu a:hover {
   background-color: var(--bg-color-active);
 }
-/* info content style */
-.infohtml div h3,
-.infocss div h3,
-.infojscript div h3 {
-  text-align: center;
-  padding: 10px;
-}
-.infohtml-img,
-.infocss-img,
-.infojscript-img {
+/* info cards content style */
+.info {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-around;
+  background-image: linear-gradient(white, rgb(127, 247, 247));
+  height: 100%;
 }
-.infohtml-list,
-.infocss-list,
-.infojscript-list {
+[data-info-cards] {
+  width: 25vw;
+  height: 100%;
+  box-shadow: 10px 10px 5px grey;
+  border: 1px solid grey;
+}
+[data-cards-img] {
   display: flex;
-  flex-direction: column;
-  margin: 10px 20px;
+  justify-content: center;
+}
+
+[data-cards-txt] li {
+  padding: 10px 0px;
+  list-style: none;
+}
+[data-info-cards="2"] {
+  background-image: linear-gradient(azure, dodgerblue);
+}
+[data-info-cards="3"] {
+  background-image: linear-gradient(azure, rgb(255, 233, 30));
 }
 
 /* pagination */
@@ -183,13 +182,11 @@
     grid-template-areas:
       "logo logo logo navbar navbar navbar"
       "header header header header header header"
-      "myhtml myhtml myhtml myhtml myhtml myhtml"
-      "mycss mycss mycss mycss mycss mycss"
-      "myjscript myjscript myjscript myjscript myjscript myjscript"
+      "cards cards cards cards cards cards"
       "pagination pagination pagination pagination pagination pagination"
       "main main main main main main"
       "foot foot foot foot foot foot";
-    grid-template-rows: 80px 80px 300px 300px 300px 80px 500px 60px;
+    grid-template-rows: 80px 80px auto 80px 500px 60px;
   }
   .navbar-menu {
     background-color: var(--bg-color-darker);
@@ -200,21 +197,19 @@
     flex-direction: column;
     position: absolute;
     top: 80px;
-
-    border-radius: var(--b-radius);
   }
   #burger {
     display: flex;
   }
-  .infohtml-img,
-  .infocss-img,
-  .infojscript-img {
-    flex-direction: row;
-    margin-left: 10px;
+  .info {
+    flex-direction: column;
+    width: 100%;
   }
-  .infohtml-list li,
-  .infocss-list li,
-  .infojscript-list li {
-    margin-left: 20px;
+  [data-info-cards] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px;
   }
 }
